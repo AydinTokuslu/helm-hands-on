@@ -1,0 +1,14 @@
+# Default values for dockerization-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+bookstore_image: aydintokuslu/bookstore-api:4.0
+mysql_image: mysql:5.7
+  
+mysql_service:
+  type: ClusterIP
+  port: 3306
+
+bookstore_service:
+  type: NodePort
+  port: 30001
