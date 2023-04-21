@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webapp-delayed
+  name: webapp-delayed
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: webapp-delayed
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: webapp-delayed
+    spec:
+      containers:
+      - image: {{ .Values.webapp_deployment_image }}
+        name: webapp-delayed
+        ports:
+        - containerPort: 8080

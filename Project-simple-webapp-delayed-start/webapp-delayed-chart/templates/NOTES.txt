@@ -1,0 +1,12 @@
+Thank you for installing {{ .Chart.Name }}.
+
+Your release is named {{ .Release.Name }}.
+
+To learn more about the release, try:
+
+  $ helm status {{ .Release.Name }}
+  $ helm get all {{ .Release.Name }}
+
+To use own images execute as below:
+
+helm upgrade --install {{ .Release.Name }} {{ .Chart.Name }}-repo/{{ .Chart.Name }} --set webapp_deployment_image=<image-name>
